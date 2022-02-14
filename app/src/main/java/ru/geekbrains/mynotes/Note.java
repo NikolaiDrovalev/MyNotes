@@ -3,8 +3,6 @@ package ru.geekbrains.mynotes;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.DataOutput;
-
 public class Note implements Parcelable {
 
     private int index;
@@ -16,7 +14,7 @@ public class Note implements Parcelable {
     public void setIndex(int index) {
         this.index = index;
     }
-    
+
     public Note(int i) {
         index = i;
     }
