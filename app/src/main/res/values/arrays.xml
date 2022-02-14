@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="note_name">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+    </string-array>
+
+    <string-array name="note_body">
+        <item>Полить цветы</item>
+        <item>Сходить в бассейн</item>
+        <item>Выбросить ёлку</item>
+        <item>Сходить в театр</item>
+        <item>Покататься на лыжах</item>
+        <item>Сходить в кинотеатр</item>
+        <item>Выспаться</item>
+    </string-array>
+
+</resources>
