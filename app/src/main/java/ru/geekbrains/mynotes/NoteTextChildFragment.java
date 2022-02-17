@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.Calendar;
 
 public class NoteTextChildFragment extends Fragment {
@@ -45,7 +47,7 @@ public class NoteTextChildFragment extends Fragment {
         textView.setText(new StringBuilder().append(day).append("/").append(month + 1).append("/").append(year));
         textView.setTextAppearance(R.style.textStyleOne);
 
-        Button button = view.findViewById(R.id.doNotData);
+        MaterialButton button = view.findViewById(R.id.doNotData);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
