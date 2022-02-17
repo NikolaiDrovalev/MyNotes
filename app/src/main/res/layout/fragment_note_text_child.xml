@@ -3,29 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/note_two"
     android:clickable="true"
     android:focusable="true"
-    android:gravity="top"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MyNotesFragment">
 
-    <FrameLayout
-        android:id="@+id/container_child"
+    <TextView
+        android:id="@+id/textViewData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/doNotData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:text="@string/doNotDisplayCurrentDate" />
 
-    <TextView
-        android:id="@+id/textViewTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center" />
 
 </LinearLayout>
