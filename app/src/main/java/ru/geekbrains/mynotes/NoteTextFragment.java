@@ -38,11 +38,10 @@ public class NoteTextFragment extends Fragment {
         TextView textViewTwo = view.findViewById(R.id.textViewTwo);
         TypedArray noteBodyTwo = getResources().obtainTypedArray(R.array.note_name);
         textViewTwo.setText(noteBodyTwo.getResourceId(note.getIndex(), R.string.one));
-        textViewTwo.setTextColor(getResources().getColor(R.color.black));
-        textViewTwo.setTextSize(30f);
+        textViewTwo.setTextAppearance(R.style.textStyleOne);
         textViewTwo.setGravity(1);
         TextView textView = view.findViewById(R.id.textView);
-        textView.setTextSize(40f);
+        textView.setTextAppearance(R.style.textStyleTwo);
         textView.setGravity(1);
         TypedArray noteBody = getResources().obtainTypedArray(R.array.note_body);
         textView.setText(noteBody.getResourceId(note.getIndex(), R.string.monday));

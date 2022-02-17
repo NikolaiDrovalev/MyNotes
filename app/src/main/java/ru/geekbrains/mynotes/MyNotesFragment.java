@@ -55,9 +55,8 @@ public class MyNotesFragment extends Fragment {
         for (int i = 0; i < notes.length; i++) {
             String noteName = notes[i];
             TextView textView = new TextView(getContext());
-            textView.setTextColor(getResources().getColor(R.color.black));
+            textView.setTextAppearance(R.style.textStyleOne);
             textView.setGravity(1);
-            textView.setTextSize(30f);
             textView.setText(noteName);
             ((LinearLayout) view).addView(textView);
             final int finalI = i;

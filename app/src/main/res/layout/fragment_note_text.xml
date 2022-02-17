@@ -4,19 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/note_two"
+    android:clickable="true"
+    android:focusable="true"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MyNotesFragment">
 
-
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@string/textFont" />
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
