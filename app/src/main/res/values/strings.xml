@@ -23,4 +23,6 @@
     <string name="version_app">Версия приложения</string>
     <string name="exit_app">выход</string>
     <string name="version_number">Версия 0.0001</string>
+    <string name="will_share">Поделиться</string>
+    <string name="add_file">Добавить файл</string>
 </resources>
