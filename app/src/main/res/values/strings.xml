@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Notes</string>
+    <string name="app_name">Мои заметки</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -20,4 +20,7 @@
     <string name="sunday">Выспаться</string>
     <string name="noteDate">Выбор даты заметки</string>
     <string name="doNotDisplayCurrentDate">Не отображать текущую дату</string>
+    <string name="version_app">Версия приложения</string>
+    <string name="exit_app">выход</string>
+    <string name="version_number">Версия 0.0001</string>
 </resources>
