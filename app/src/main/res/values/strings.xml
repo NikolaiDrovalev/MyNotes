@@ -25,4 +25,5 @@
     <string name="version_number">Версия 0.0001</string>
     <string name="will_share">Поделиться</string>
     <string name="add_file">Добавить файл</string>
+    <string name="do_something">что-то сделать</string>
 </resources>

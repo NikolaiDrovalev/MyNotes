@@ -1,11 +1,17 @@
 package ru.geekbrains.mynotes;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 public class MyNotes extends AppCompatActivity {
@@ -19,11 +25,35 @@ public class MyNotes extends AppCompatActivity {
             MyNotesFragment myNotesFragment = MyNotesFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.listOfNotes, myNotesFragment).commit();
         }
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                showPopupMenu(view);
+                return false;
+            }
+        });
     }
+    private void showPopupMenu(View view){
+        PopupMenu popupMenu = new PopupMenu(this,view);
+        popupMenu.inflate(R.menu.popup);
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(getApplicationContext(),"Что-то произошло",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+        popupMenu.show();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_notes,menu);
+        menu.findItem(R.id.action_version).setVisible(true);
         return super.onCreateOptionsMenu(menu);
     }
 

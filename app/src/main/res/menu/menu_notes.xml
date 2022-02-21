@@ -4,13 +4,16 @@
 
     <item
         android:id="@+id/action_version"
+        android:icon="@drawable/info_version"
         android:title="@string/version_app"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/info_version" />
+        app:iconTint="#AAffffff"
+        app:showAsAction="ifRoom" />
 
     <item
+
         android:id="@+id/action_exit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:title="@string/exit_app"
+        app:iconTint="@color/black"
         app:showAsAction="always" />
 </menu>

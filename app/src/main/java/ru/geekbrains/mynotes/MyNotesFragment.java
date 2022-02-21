@@ -32,7 +32,6 @@ public class MyNotesFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-
         outState.putParcelable(CURRENT_NOTE, currentNote);
     }
 
