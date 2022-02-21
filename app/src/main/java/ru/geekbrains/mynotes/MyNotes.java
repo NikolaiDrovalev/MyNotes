@@ -1,7 +1,5 @@
 package ru.geekbrains.mynotes;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,13 +34,14 @@ public class MyNotes extends AppCompatActivity {
             }
         });
     }
-    private void showPopupMenu(View view){
-        PopupMenu popupMenu = new PopupMenu(this,view);
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
         popupMenu.inflate(R.menu.popup);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(getApplicationContext(),"Что-то произошло",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Что-то произошло", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -52,16 +51,16 @@ public class MyNotes extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_notes,menu);
+        getMenuInflater().inflate(R.menu.menu_notes, menu);
         menu.findItem(R.id.action_version).setVisible(true);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case (R.id.action_version):
-                getSupportFragmentManager().beginTransaction().replace(R.id.listOfNotes,new VersionFragment()).addToBackStack("").commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.listOfNotes, new VersionFragment()).addToBackStack("").commit();
                 return true;
             case (R.id.action_exit):
                 finish();

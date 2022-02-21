@@ -38,7 +38,6 @@ public class NoteTextFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_note_text_fragment,menu);
-        menu.findItem(R.id.action_version).setVisible(false);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -58,7 +57,9 @@ public class NoteTextFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setHasOptionsMenu(true);
+        if (savedInstanceState == null){
+            setHasOptionsMenu(true);
+        }
         note = getArguments().getParcelable(ARG_NOTE);
         getChildFragmentManager().beginTransaction().replace(R.id.container_child, NoteTextChildFragment.newInstance(note)).addToBackStack("").commit();
         TextView textViewTwo = view.findViewById(R.id.textViewTwo);
