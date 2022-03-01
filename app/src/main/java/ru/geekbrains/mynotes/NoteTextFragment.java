@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class NoteTextFragment extends Fragment {
 
     public static final String ARG_NOTE = "noteArg";
@@ -45,10 +47,10 @@ public class NoteTextFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case (R.id.action_toast_add_file):
-                Toast.makeText(requireContext(),"Добавляется любой файл", Toast.LENGTH_LONG).show();
+                showSnackBar(getView());
                 return true;
             case (R.id.action_toast_will_share):
-                Toast.makeText(requireContext(),"Отправляем заметку в соцсети", Toast.LENGTH_LONG).show();
+                showToast();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -71,4 +73,13 @@ public class NoteTextFragment extends Fragment {
         TypedArray noteBody = getResources().obtainTypedArray(R.array.note_body);
         textView.setText(noteBody.getResourceId(note.getIndex(), R.string.monday));
     }
+
+    void showSnackBar(View view){
+        Snackbar.make(view,"Добавляется любой файл",Snackbar.LENGTH_LONG).show();
+    }
+
+    void showToast(){
+        Toast.makeText(requireContext(),"Отправляем заметку в соцсети", Toast.LENGTH_LONG).show();
+    }
+
 }
