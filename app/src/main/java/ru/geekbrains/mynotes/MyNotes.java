@@ -1,5 +1,7 @@
 package ru.geekbrains.mynotes;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,7 +43,7 @@ public class MyNotes extends AppCompatActivity {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(getApplicationContext(), "Что-то произошло", Toast.LENGTH_SHORT).show();
+                showToast("Что-то произошло");
                 return false;
             }
         });
@@ -63,12 +65,31 @@ public class MyNotes extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.listOfNotes, new VersionFragment()).addToBackStack("").commit();
                 return true;
             case (R.id.action_exit):
-                finish();
+                showAlertDialog();
                 return true;
-
-
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    void showAlertDialog(){
+        new AlertDialog.Builder(this)
+                .setTitle("Выход из приложения")
+                .setMessage("Вы уверены?")
+                .setPositiveButton("Да", (dialogInterface, i) -> {
+                    showToast("Вышли из приложения");
+                    finish();
+                })
+                .setNegativeButton("Нет", (dialogInterface, i) -> {
+                    showToast("Закрыли диалоговое окно");
+                })
+                .setNeutralButton("Поставить оценку", (dialogInterface, i) -> {
+                    showToast("Оценка - 5 ☆");
+                })
+                .show();
+    }
+
+    void showToast(String message){
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
